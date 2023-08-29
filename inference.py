@@ -10,6 +10,12 @@ import time
 import gc
 gc.collect()
 
+import cv2
+from readQR import ReadQR
+import readQR.wechat_artefacts as artefacts
+art_dir = artefacts.__path__[0]
+
+
 img_sz = 2048
 
 image_folder = '/RawImages/AkronTest_CO' # change this to the path of your images
@@ -60,10 +66,25 @@ cwd = os.getcwd()
 csv_folder = os.path.join(cwd,project,'yolov8_model_'+str(img_sz)+'_csv_'+base_folder)
 if not os.path.exists(csv_folder):
   os.mkdir(csv_folder)
-  
+
+# initialize QR reader
+qr_reader = ReadQR(artefact_path=art_dir)
+show = None # None, 'single', 'continuous' # preview results 'single' or 'continuous' (video)
+
 for i, img_paths in enumerate(img_paths2):
   save_name = os.path.join(csv_folder,('stem_count_'+str(i)+'.csv')) # change name when you change folder
 
+  # read QR code if able
+  Qr_Names = []
+  for img_path in img_paths:
+    img = cv2.imread(img_path, cv2.COLOR_BGR2RGB)
+    results = qr_reader.decode(img, show=show)
+    if len(results) == 0:
+      print('No QR code detected for "'+img_path+'"')
+      Qr_Names.append("QR code not detected!!!")
+    else:
+      Qr_Names.append(results[0])
+  
   # do inference and save
   tic = time.time()
   img_results = model.predict(source=img_paths, save=save, save_txt=save_txt, save_conf=save_conf, show_labels=show_labels, show_conf=show_conf,
@@ -76,7 +97,8 @@ for i, img_paths in enumerate(img_paths2):
   print("Infernce time per image = "+str(time_per_image)+ " ms")
 
   # loop through the results, get stem count, save
-  Predictions = pd.DataFrame(columns = ['ImagePath','StemCount'])
+  # Predictions = pd.DataFrame(columns = ['ImagePath','StemCount'])
+  Predictions = pd.DataFrame(columns = ['ImagePath','QRcodeInfo','StemCount'])
   n = 0
   for img_result in img_results:
     # preds = img_result.__getitem__(0)
@@ -88,9 +110,11 @@ for i, img_paths in enumerate(img_paths2):
     
     n_dets = int(len(preds))
     im_name = img_paths[n]
+    qr_info = Qr_Names[n]
 
     Predictions.at[n,'ImagePath'] = im_name
     Predictions.at[n,'StemCount'] = n_dets
+    Predictions.at[n,'QRcodeInfo'] = qr_info
     n+=1
 
   # save results in csv
