@@ -3,9 +3,9 @@ import time
 import os
 import sys
 
-def do_shuffle(img_sz):
+def do_shuffle(data_folder, img_sz):
     # data_folder = "Data2/" + str(img_sz)
-    data_folder = os.path.join("Data2", str(img_sz))
+    data_folder = os.path.join(data_folder, str(img_sz))
     save_folder = data_folder + "_shuffled"
 
     shuffler = ImageShuffle(data_folder, save_folder, insert_path=True)
@@ -16,5 +16,6 @@ def do_shuffle(img_sz):
     return data_folder, save_folder
 
 if __name__ == "__main__":
-    img_sz = int(sys.argv[1])
-    do_shuffle(img_sz)
+    data_folder = sys.argv[1]
+    img_sz = int(sys.argv[2])
+    do_shuffle(data_folder, img_sz)
