@@ -72,7 +72,7 @@ patience = 100 # early stopping patience
 verbose = True # print mAP every epoch
 exist_ok = True # change to true if you want to overwrite previous results
 name_val = name+"_val" # validation results
-single_cls = True # train as single-class dataset
+single_cls = False # train as single-class dataset
 cache = True # use cache images for faster training
 ```
 - You can also edit the ratio of the training, validation, and test sets in the `utils/shuffle_write.py` file. The default ratio is `0.7:0.2:0.1` for training, validation, and test sets respectively. This will create a new shuffled dataset in the `"Data/img_size_shuffled"` folder which will be used for training.
