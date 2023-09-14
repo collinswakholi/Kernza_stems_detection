@@ -14,10 +14,13 @@ gc.collect()
 
 
 img_sz = 2048
+data_folder = "Data"
 
-def run_shuffle_script(img_sz):
+################################################################################################
+# Shuffle data, split into training, validation, and test dataset
+def run_shuffle_script(data_folder,img_sz):
     script_path = os.path.join("utils", "do_shuffle.py")
-    process = subprocess.Popen(["python", script_path, str(img_sz)])
+    process = subprocess.Popen(["python", script_path, data_folder, str(img_sz)])
     time.sleep(5)
     print('\nShuffle Done\n')
     process.terminate()
@@ -25,10 +28,11 @@ def run_shuffle_script(img_sz):
     return
 
 
-# run_shuffle_script(img_sz)
-# time.sleep(5)
+run_shuffle_script(data_folder, img_sz)
+time.sleep(5)
+################################################################################################
 
-data_folder = "Data/"+str(img_sz)
+data_folder = os.path.join(data_folder, str(img_sz)) 
 save_folder = data_folder+"_shuffled"
 yaml_dir = os.path.join(save_folder, "data.yaml")
 print("\nYAML Dir = "+yaml_dir+"\n")
