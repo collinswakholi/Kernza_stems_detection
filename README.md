@@ -13,7 +13,8 @@ cd Kernza_stems_detection
 - Install the requirements:
 ```bash
 pip install -r requirements.txt
-``` 
+```
+- Download the stem count model artefacts from [Google Drive](https://drive.google.com/drive/folders/1VLQkowfidxsOjknyZr7Up9Ks8omRDjnm?usp=sharing).
 - Download the dataset from Roboflow (using [this link](https://universe.roboflow.com/usdaars/kz_measurestems)) and extract it into the `"Data"` folder of this repository. Rename the folder containing the images and labels to `"img_size"` depending on the image size of your dataset. For example, if your image size is `512x512`, rename the folder to `"512"`. 
 The folder structure should look like this:
 ```bash
