@@ -14,7 +14,6 @@ cd Kernza_stems_detection
 ```bash
 pip install -r requirements.txt
 ```
-- Download the stem count model artefacts from [Google Drive](https://drive.google.com/drive/folders/1VLQkowfidxsOjknyZr7Up9Ks8omRDjnm?usp=sharing).
 - Download the dataset from Roboflow (using [this link](https://universe.roboflow.com/usdaars/kz_measurestems)) and extract it into the `"Data"` folder of this repository. Rename the folder containing the images and labels to `"img_size"` depending on the image size of your dataset. For example, if your image size is `512x512`, rename the folder to `"512"`. 
 The folder structure should look like this:
 ```bash
@@ -88,7 +87,8 @@ python train_YOLOv8.py
 - The training results will be saved in the `"project/name"` folder. The best model will be saved in the `"project/name/weights"` folder.
 
 ### Inference
-- To run inference on images in a folder, open the `inference.py` file and edit the variables to match your dataset.
+- Download the stem count model artefacts from [Google Drive](https://drive.google.com/drive/folders/1VLQkowfidxsOjknyZr7Up9Ks8omRDjnm?usp=sharing).
+- To run inference on images in a folder, open the `inference.py` or `inference.ipynb` if you are using Colab.  Edit the variables to match your dataset and model directory.
 ```bash
 img_sz = 2048
 
