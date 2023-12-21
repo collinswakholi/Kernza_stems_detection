@@ -69,7 +69,7 @@ if not os.path.exists(csv_folder):
 
 # initialize QR reader
 qr_reader = ReadQR(artefact_path=art_dir)
-show = None # None, 'single', 'continuous' # preview results 'single' or 'continuous' (video)
+show = False # True, or Flase
 
 for i, img_paths in enumerate(img_paths2):
   save_name = os.path.join(csv_folder,('stem_count_'+str(i)+'.csv')) # change name when you change folder
