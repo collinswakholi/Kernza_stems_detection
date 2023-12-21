@@ -135,6 +135,7 @@ python inference.py
 ![Results Image1](imgs/1.jpg)
 ![Results Image2](imgs/2.jpg)
 ## METHOD 2: Using Ilastik
- Describe process -- Garett
+ Check out these videos that explain how stem detection was done using [Ilastik](https://www.ilastik.org/).
 
- [video link](https://www.youtube.com/watch?v=Z3v8xZQ9zvE) --Garett
+ ![Ilastik Pixel Classification (1/2)](https://www.youtube.com/watch?v=gnbqtwN2Zsc) 
+ ![Ilastik Pixel Classification (2/2)](https://www.youtube.com/watch?v=VVntpw4AO9Q)
