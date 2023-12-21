@@ -138,8 +138,10 @@ python inference.py
  Check out these videos that explain how stem detection was done using [Ilastik](https://www.ilastik.org/).
 
  - Ilastik Pixel Classification Video (1/2)
+
  [![Ilastik Pixel Classification (1/2)](https://img.youtube.com/vi/gnbqtwN2Zsc/0.jpg)](https://www.youtube.com/watch?v=gnbqtwN2Zsc)
 
  - Ilastik Pixel Classification Video (2/2)
+
  [![Ilastik Pixel Classification (2/2)](https://img.youtube.com/vi/VVntpw4AO9Q/0.jpg)](https://www.youtube.com/watch?v=VVntpw4AO9Q)
 
