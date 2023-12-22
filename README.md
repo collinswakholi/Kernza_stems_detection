@@ -126,7 +126,7 @@ nx = 10 # number of images per batch
 python inference.py
 ```
 - The results will be saved in the `"project/name"` folder, including the stems count in the `"project/name/stem_count_img_size.csv"` file. 
-- The same can be done using the `Inference.ipynb` notebook on Google Colab.
+- The same can be done using the `Inference.ipynb` notebook on Google Colab. Follow this [Video](https://www.youtube.com/watch?v=phJvNnreSIM) for a step by step tutorial.
 
 ### Results
 - Performance of the model on the test set:
@@ -144,4 +144,3 @@ python inference.py
  - Ilastik Pixel Classification Video (2/2)
 
  [![Ilastik Pixel Classification (2/2)](https://img.youtube.com/vi/VVntpw4AO9Q/0.jpg)](https://www.youtube.com/watch?v=VVntpw4AO9Q)
-
