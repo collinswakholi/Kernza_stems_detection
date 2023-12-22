@@ -88,7 +88,7 @@ python train_YOLOv8.py
 
 ### Inference
 - Download the stem count model artefacts from [Google Drive](https://drive.google.com/drive/folders/1VLQkowfidxsOjknyZr7Up9Ks8omRDjnm?usp=sharing).
-- To run inference on images in a folder, open the `inference.py` or `inference.ipynb` if you are using Colab.  Edit the variables to match your dataset and model directory.
+- To run inference on images in a folder (For Example "Test images"), open the `inference.py` or `inference.ipynb` if you are using Colab.  Edit the variables to match your dataset and model directory.
 ```bash
 img_sz = 2048
 
