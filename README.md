@@ -30,6 +30,7 @@ Kernza_stems_detection
 │   ├── do_shuffle.py
 │   ├── shuffle_write.py
 ├── imgs
+├── Test images
 ├── inference.py
 ├── Inference.ipynb
 ├── train_YOLOv8.py
